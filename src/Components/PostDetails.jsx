@@ -1,8 +1,10 @@
 import React ,{useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector ,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import like from '../images/like.svg'
-import share from '../images/share.svg'
+import share from '../images/share.svg';
+import Post from './Post';
+import {selectedPost} from '../redux/actions/postInfoAction';
 
 // import spiderman from '../images/spiderman.jpg';
 
@@ -12,6 +14,16 @@ const PostDetails = () => {
 const [selected,setSelected]=useState('detail');
   const  post=useSelector(state=>state.postState);
   const imgLink=`https://picsum.photos/200?random=${post.id}`;
+
+  const {loading,data,error}=useSelector(state=>state.fetchState);
+
+   const dispatch=useDispatch();
+
+  function handleClick(post){
+    dispatch(selectedPost(post));
+      navigate(`/item/${post.id}`);
+}
+
 
 function details(){
 setSelected('detail');
@@ -23,6 +35,7 @@ setSelected(`userInfo`);
 const navigate=useNavigate();
 
   return (
+  <>
     <div className='postDetails-container'>
         <div className="post-heading">
         <p className='back' onClick={()=>navigate('/')}>&#8592;</p>
@@ -51,6 +64,16 @@ const navigate=useNavigate();
             </div>
         </div>
     </div>
+     <h1>More Posts</h1>
+     <div className="posts">
+          {loading && <h1>Fetching...</h1>}
+          {data.length>0 && data.map((post)=>{
+           return <div className="post" onClick={()=>handleClick(post)} key={post.id}>
+                   <Post info={post} />
+                  </div>
+          })}
+       </div>
+  </>
   )
 }
 

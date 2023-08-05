@@ -56,6 +56,10 @@ header{
   width: 100%;
   height: 100%;
 }
+.middle span {
+
+
+}
 
 main{
   min-height:calc(100vh - 12vh);
@@ -123,6 +127,7 @@ background-color:var(--white);
 border-radius:10px;
 margin:10px 0;
 cursor: pointer;
+min-width:280px;
 }
 
 .post-image{
@@ -175,6 +180,7 @@ cursor: pointer;
 
 .postDetails-container{
   /* border:1px solid black; */
+  margin:1rem 0;
 }
 .postDetails{
   display: flex;

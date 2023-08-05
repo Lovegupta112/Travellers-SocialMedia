@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+:root{
+  --orange:#F05A22;
+  --white:#FFFFFF;
+  --cream:#F9DDCF;
+  --light-cream:#F8E7E7;
+  --bg-color:#F4F4F4;
+  --main-heading-color:#2D2D2D;
+  --heading-color:#292931;
+  --input-color:#595959;
+  --light-grey:#898989;
+}
+
+.container{
+  min-height:100vh;
+  background-color:var(--bg-color);
+}
+
+header{
+  height: 12vh;
+    display: flex;
+    align-items: center;
+    background-color:var(--orange);
+    padding-inline:2rem;
+    box-shadow:4px 14px 24px rgba(255, 190, 157, 0.81);
+}
+.logo{
+  color:var(--white);
+ 
+}
+.middle{
+ 
+  display: flex;
+  align-items: center;
+  background-color: white;
+  width: 35%;
+  margin: auto;
+  border-radius: 30px;
+  height: 80%;
+  justify-content: space-evenly;
+}
+
+.middle span{
+  width:10%;
+  height:40%;
+  cursor: pointer;
+}
+.middle span img{
+  width: 100%;
+  height: 100%;
+}
+
+main{
+  min-height:calc(100vh - 12vh);
+  padding:2rem;
+}
+.main-heading{
+  margin:1rem 0;
+}
+.posts-container{
+/* border:1px solid black; */
+padding:1rem 0;
+}
+.searchBar{
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color:var(--white);
+  border: none;
+  border-radius: 6px;
+}
+.searchBar .search-image{
+  width: 3%;
+height: 50%;
+cursor: pointer;
+}
+
+.search-image img{
+  width: 100%;
+  height: 100%;
+}
+.searchBar input{
+  height: 80%;
+width: calc(100% - 5%);
+border: none;
+font-size: 1rem;
+/* color:var(--input-color); */
+}
+::placeholder{
+  color:var(--input-color);
+}
+.searchBar input:focus{
+  outline: none;
+}
+
+
+/* posts---------- */
+.posts{
+  padding: 2rem 0;
+  display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+
+}
+
+.post{
+  width:32%;
+min-height: 400px;
+/* border: 1px solid black; */
+align-items: center;
+display: flex;
+flex-direction: column;
+padding: 1rem;
+background-color:var(--white);
+border-radius:10px;
+margin:10px 0;
+cursor: pointer;
+}
+
+.post-image{
+  width: 100%;
+height: 230px;
+border-radius: 10px;
+}
+.post-image img{
+  width: 100%;
+height: 100%;
+border-radius: 10px;
+}
+
+.post-info{
+  padding: 1rem 0;
+}
+.post-info .desc{
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.desc p{
+  font-size: 13px;
+width: 81%;
+}
+.desc p .read-more{
+  color:var(--orange);
+  cursor: pointer;
+  font-weight:700;
+}
+
+.arrow-section{
+  width: 15%;
+  height:12%;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background-image: linear-gradient(#F05A22,#F78E48);
+box-shadow:1px 3px 14px  #F05A224A;
+border-radius:10px;
+cursor: pointer;
+}
+.arrow-section span{
+  font-size:2rem;
+  color:var(--white);
+}
+
+/* postDetails----- */
+
+.postDetails-container{
+  /* border:1px solid black; */
+}
+.postDetails{
+  display: flex;
+}
+
+
+.postDetails .post-image{
+  width: 40%;
+height: 230px;
+border-radius: 10px;
+position: relative;
+}
+
+.post-image .info{
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  color: white;
+  font-weight:700;
+  padding:0 10px;
+}
+.post-image .info .icons{
+  display: flex;
+}
+.icons img{
+  margin:0 5px;
+}
+.details-section{
+  width:60%;
+}
+
+.details-section .buttons{
+  padding:0 2rem;
+}
+
+.buttons button{
+  margin-right: 1rem;
+padding: 5px 15px;
+cursor: pointer;
+border-radius: 10px;
+font-size:1rem;
+border:none;
+}
+
+.details-section .info{
+  padding:2rem;
+}
+
+
+.active{
+  background-color:var(--orange);
+  color:var(--white);
+  box-shadow: 4px 3px 9px 0px #F9C5B9F5;
+
+}
+
+.hide{
+  background-color:var(--white);
+  color:black;
+}
+
+.post-heading{
+  display: flex;
+  margin:1rem 0;
+}
+
+.postDetails-container .back{
+  border-radius:20px;
+  width:40px;
+  height:40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:2px 2px 10px grey;
+  margin-right:1rem;
+  cursor: pointer;
+}
